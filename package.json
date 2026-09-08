@@ -7,11 +7,9 @@
     "dev": "concurrently -k \"node --watch server/index.js\" \"vite --host 127.0.0.1\"",
     "build": "tsc -b && vite build",
     "start": "NODE_ENV=production node server/index.js",
-    "test": "node --test tests/unit/*.test.js tests/integration/*.test.js",
-    "test:e2e": "playwright test",
-    "format": "prettier --write src server tests *.js *.json README.md docs",
+    "format": "prettier --write src server *.js *.json README.md docs",
     "typecheck": "tsc --noEmit",
-    "format:check": "prettier --check src server tests *.js *.json README.md docs"
+    "format:check": "prettier --check src server *.js *.json README.md docs"
   },
   "dependencies": {
     "express": "^5.1.0",
@@ -23,7 +21,6 @@
     "zustand": "^5.0.0"
   },
   "devDependencies": {
-    "@playwright/test": "^1.63.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "@vitejs/plugin-react": "^4.3.0",

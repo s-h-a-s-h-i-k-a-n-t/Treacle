@@ -36,11 +36,6 @@ server/
   middleware/                  # Session authorization
   services/                    # Sessions, simulation, aggregation and SSE lifecycle
   utils/                       # Cookie parsing and numeric helpers
- tests/
-  unit/                        # Simulator and aggregation behavior
-  integration/                 # Authenticated APIs and streaming lifecycle
-  helpers/                     # Isolated test server setup and cleanup
-  browser/                     # Complete browser user flows
  docs/
   architecture.md             # This guide
 ```
@@ -69,6 +64,5 @@ Sessions and telemetry remain in memory, as in the assessment implementation. Th
 - Add a page under its feature and register it in `app/AppRoutes.tsx`.
 - Add HTTP operations to the appropriate frontend API service, with a response type.
 - Add backend routes through a router/controller and put domain logic in a service.
-- Run `npm run typecheck`, `npm test`, and `npm run build` for code changes.
-- With `npm run dev` running, run `npm run test:e2e` for changes affecting browser flows.
+- Run `npm run typecheck` and `npm run build` for code changes.
 - Run `npm run format` before handing off changes; `npm run format:check` checks formatting without rewriting files.

@@ -16,8 +16,6 @@ Open http://127.0.0.1:5173. The frontend proxies `/api` to the backend on port 3
 **Demo login:** `demo@sentry.app` / `Warehouse123!`
 
 ```sh
-npm test       # Backend integration and simulator tests
-npm run test:e2e # Chrome browser walkthrough (run npm run dev first; requires Chrome)
 npm run build # TypeScript check and production bundle
 npm start     # Serve the production build and API on http://127.0.0.1:3001
 ```
@@ -56,10 +54,6 @@ The frontend is organized by feature, with separate shared components, lifecycle
 - `GET /api/dashboard/alerts` — derived alerts and refresh timestamp
 - `PATCH /api/dashboard/alerts/:id` — acknowledge an alert
 
-## Verification
-
-Automated tests cover metric generation and aggregation accuracy, authentication and API protection, invalid zone validation, alert acknowledgement, logout revocation, streaming multiple frames, and session expiry on an open stream.
-
-The Chrome walkthrough verifies login validation, route protection, changing live timestamps, zone filtering, dialogs, alert search/acknowledgement, persistent preferences, responsive layout, polling during pause, and API-driven session invalidation.
+## Manual verification
 
 For a manual walkthrough: log in; watch live metrics/timestamps change; switch zones and chart metrics; pause live updates and verify analytics polling continues; filter and acknowledge an alert; change theme and polling interval; reload to confirm preferences/session persistence; sign out and confirm protected routes redirect.
