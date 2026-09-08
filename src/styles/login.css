@@ -1,0 +1,121 @@
+.login {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  background: var(--card);
+}
+.login-story {
+  background: #18392c;
+  color: #eef0dc;
+  padding: 45px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+.login-story .brand {
+  padding: 0;
+}
+.login-story h1 {
+  font-size: 64px;
+  line-height: 1.13;
+  letter-spacing: -3px;
+  margin: 25px 0;
+}
+.login-story em {
+  font-style: normal;
+  color: #c5d49c;
+}
+.login-story p {
+  max-width: 320px;
+  color: #a3b5a5;
+  font-size: 14px;
+}
+.login-story .eyebrow {
+  color: #a9be96;
+}
+.login-story > small {
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: #8da492;
+}
+.login-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 42px;
+}
+.login-grid > div {
+  border: 1px solid #56705b;
+  padding: 18px 10px;
+  border-radius: 7px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  color: #abc297;
+}
+.login-grid span {
+  font-size: 8px;
+}
+.login-grid i {
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  background: #c7d6a2;
+}
+.login-form {
+  align-self: center;
+  padding: 60px;
+  max-width: 580px;
+  width: 100%;
+  margin: auto;
+}
+.login-form h2 {
+  font-size: 28px;
+  letter-spacing: -1px;
+}
+.login-form > p {
+  margin: 12px 0 30px;
+}
+.login-form label {
+  display: block;
+  font-size: 12px;
+  margin: 20px 0;
+}
+.login-form input {
+  display: block;
+  width: 100%;
+  margin-top: 9px;
+  padding: 13px;
+}
+.login-form .primary {
+  width: 100%;
+  padding: 14px;
+  margin-top: 6px;
+  justify-content: space-between;
+}
+.demo {
+  display: flex;
+  gap: 10px;
+  background: var(--soft);
+  padding: 17px;
+  border-radius: 8px;
+  margin: 26px 0;
+  color: var(--green);
+}
+.demo strong {
+  font-size: 11px;
+}
+.demo p {
+  font-size: 10px;
+  margin-top: 4px;
+}
+.demo code {
+  font-size: 9px;
+  display: block;
+  margin-top: 8px;
+}
+.login-form > small {
+  font-size: 10px;
+}

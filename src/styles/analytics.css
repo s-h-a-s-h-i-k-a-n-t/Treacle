@@ -1,0 +1,21 @@
+.section-note {
+  font-size: 11px;
+  color: var(--muted);
+  margin: 0 0 20px;
+}
+.delta {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: var(--green);
+}
+.delta span {
+  color: var(--muted);
+  font-size: 10px;
+  margin-left: 5px;
+}
+.analytics-chart {
+  margin-bottom: 20px;
+  padding-bottom: 18px;
+}

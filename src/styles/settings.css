@@ -1,0 +1,63 @@
+.settings-panel {
+  padding: 26px;
+  max-width: 900px;
+}
+.setting {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.setting:last-child {
+  border: 0;
+  padding-bottom: 0;
+}
+.setting strong {
+  font-size: 13px;
+}
+.setting p {
+  font-size: 11px;
+  margin-top: 6px;
+}
+.switch {
+  width: 42px;
+  height: 24px;
+  padding: 3px;
+  border: 0;
+  border-radius: 20px;
+  justify-content: flex-start;
+  background: #ccd3c8;
+}
+.switch span {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 1px 3px #0002;
+  transition: transform 0.2s;
+}
+.switch.on {
+  background: #557954;
+}
+.switch.on span {
+  transform: translateX(18px);
+}
+.info-box {
+  display: flex;
+  gap: 14px;
+  margin: 22px 0;
+  padding: 22px;
+  background: var(--soft);
+  border-radius: 8px;
+  max-width: 900px;
+  color: var(--green);
+}
+.info-box strong {
+  font-size: 12px;
+}
+.info-box p {
+  font-size: 11px;
+  margin-top: 7px;
+}

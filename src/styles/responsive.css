@@ -1,0 +1,289 @@
+@media (min-width: 1450px) {
+  main {
+    padding-top: 40px;
+  }
+  .metric-card {
+    padding: 24px;
+  }
+  .overview-grid {
+    grid-template-columns: 2.5fr 1fr;
+  }
+}
+@media (max-width: 1100px) {
+  aside {
+    width: 205px;
+    padding: 25px 12px 0;
+  }
+  .main {
+    margin-left: 205px;
+  }
+  main {
+    padding: 25px 22px;
+  }
+  .page-heading {
+    align-items: flex-start;
+  }
+  .heading-actions .date {
+    display: none;
+  }
+  .metric-card {
+    padding: 17px;
+  }
+  .metric-value {
+    font-size: 29px;
+  }
+  .metric-value svg {
+    width: 55px;
+  }
+  .overview-grid {
+    grid-template-columns: minmax(0, 1.8fr) minmax(210px, 1fr);
+  }
+  .live-bar small {
+    font-size: 9px;
+  }
+  .login-story {
+    padding: 40px;
+  }
+  .login-form {
+    padding: 40px;
+  }
+  .login-story h1 {
+    font-size: 52px;
+  }
+}
+@media (max-width: 800px) {
+  aside {
+    width: 74px;
+    padding: 24px 10px;
+  }
+  .brand {
+    font-size: 0;
+    padding: 0;
+    justify-content: center;
+  }
+  .brand-period,
+  .workspace,
+  .nav-label,
+  .side-bottom,
+  .brand-period {
+    display: none;
+  }
+  nav {
+    margin-top: 35px;
+  }
+  nav a {
+    font-size: 0;
+    padding: 14px;
+    gap: 0;
+    position: relative;
+  }
+  nav a svg {
+    flex-shrink: 0;
+  }
+  .nav-count {
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    font-size: 8px;
+  }
+  .main {
+    margin-left: 74px;
+  }
+  header {
+    padding: 0 22px;
+  }
+  .demo-tag {
+    display: none;
+  }
+  .overview-grid {
+    grid-template-columns: 1fr;
+  }
+  .health {
+    display: none;
+  }
+  .metric-grid {
+    gap: 10px;
+  }
+  .metric-card {
+    padding: 15px;
+  }
+  .metric-value svg {
+    display: none;
+  }
+  .metric-note {
+    font-size: 8px;
+  }
+  .metric-note span {
+    display: none;
+  }
+  .live-bar > div > span:not(.status),
+  .divider {
+    display: none;
+  }
+  .page-heading {
+    flex-wrap: wrap;
+  }
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+  .login {
+    grid-template-columns: 1fr;
+  }
+  .login-story {
+    display: none;
+  }
+  .login-form {
+    padding: 35px;
+    max-width: 480px;
+  }
+  .alert-row {
+    padding: 16px 12px;
+  }
+  .alert-row > svg {
+    display: none;
+  }
+  .alert-row p {
+    max-width: 200px;
+  }
+  .breadcrumb {
+    font-size: 10px;
+  }
+}
+@media (max-width: 560px) {
+  main {
+    padding: 22px 14px;
+  }
+  header {
+    height: 60px;
+    padding: 0 14px;
+  }
+  .header-right {
+    gap: 10px;
+  }
+  .breadcrumb {
+    font-size: 0;
+    gap: 0;
+  }
+  .breadcrumb svg {
+    display: none;
+  }
+  .breadcrumb span {
+    font-size: 10px;
+  }
+  h1 {
+    font-size: 25px;
+  }
+  .page-heading p {
+    font-size: 11px;
+  }
+  .eyebrow {
+    font-size: 8px;
+  }
+  .metric-grid {
+    grid-template-columns: 1fr;
+  }
+  .metric-value svg {
+    display: block;
+    width: 100px;
+  }
+  .metric-value {
+    margin: 8px 0;
+  }
+  .metric-note {
+    font-size: 9px;
+  }
+  .metric-card {
+    padding: 15px 18px;
+  }
+  .live-bar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .live-bar > div {
+    flex-wrap: wrap;
+  }
+  .metric-top {
+    font-size: 12px;
+  }
+  .panel-heading {
+    padding: 17px;
+  }
+  .panel-heading .subtle-badge {
+    display: none;
+  }
+  .tabs {
+    margin-left: 10px;
+  }
+  .tabs button {
+    font-size: 8px;
+    padding: 7px;
+  }
+  .alert-summary {
+    gap: 8px;
+  }
+  .alert-summary .panel {
+    padding: 12px;
+  }
+  .alert-summary span {
+    font-size: 9px;
+  }
+  .filter-bar {
+    padding: 12px;
+    flex-direction: column;
+  }
+  .search input {
+    width: 100%;
+  }
+  .alert-row {
+    flex-wrap: wrap;
+  }
+  .alert-meta {
+    margin-left: 45px;
+    align-items: flex-start;
+  }
+  .alert-icon {
+    padding: 7px;
+  }
+  .alert-row strong {
+    font-size: 10px;
+  }
+  .setting {
+    align-items: flex-start;
+  }
+  .setting select {
+    max-width: 110px;
+  }
+  .settings-panel {
+    padding: 18px;
+  }
+  .setting p {
+    font-size: 10px;
+  }
+  .detail-row {
+    flex-wrap: wrap;
+    font-size: 11px;
+  }
+  .profile-card,
+  .session-card {
+    padding: 20px;
+  }
+  footer {
+    padding: 0 14px 18px;
+    font-size: 8px;
+  }
+  footer > span:last-child {
+    display: none;
+  }
+  .heading-actions {
+    width: 100%;
+  }
+  .chart-caption span {
+    font-size: 8px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

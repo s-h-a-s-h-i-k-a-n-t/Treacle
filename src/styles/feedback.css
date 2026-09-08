@@ -1,0 +1,63 @@
+.danger {
+  color: #af5b50;
+}
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: #13251e66;
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 20;
+  animation: fade 0.2s;
+}
+.modal {
+  background: var(--card);
+  border-radius: 14px;
+  box-shadow: 0 30px 80px #0003;
+  width: 460px;
+  max-height: 90vh;
+  overflow: auto;
+  padding: 24px;
+  outline: none;
+}
+.modal .panel-heading {
+  padding: 0 0 20px;
+}
+.modal > p {
+  margin: 15px 0;
+}
+.empty {
+  text-align: center;
+  padding: 45px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.error {
+  color: #b04d40;
+  background: #fceee9;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+.banner {
+  margin-bottom: 20px;
+}
+.primary {
+  background: #416b4e;
+  border-color: #416b4e;
+  color: white;
+}
+.primary:hover {
+  background: #34563e;
+}
+.boot {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--green);
+}

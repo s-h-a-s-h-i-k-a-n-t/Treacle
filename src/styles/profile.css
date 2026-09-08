@@ -1,0 +1,39 @@
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 22px;
+}
+.profile-card,
+.session-card {
+  padding: 28px;
+}
+.profile-card > h2 {
+  margin-top: 18px;
+}
+.profile-card > .subtle-badge {
+  margin: 16px 0;
+}
+.detail-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+}
+.detail-row span {
+  color: var(--muted);
+}
+.detail-row strong {
+  font-weight: 550;
+}
+.session-card h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.session-card p {
+  margin: 20px 0;
+  font-size: 12px;
+}

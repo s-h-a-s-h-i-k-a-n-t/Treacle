@@ -1,0 +1,239 @@
+.shell {
+  display: flex;
+  min-height: 100vh;
+}
+aside {
+  width: 238px;
+  position: fixed;
+  inset: 0 auto 0 0;
+  background: var(--sidebar);
+  border-right: 1px solid var(--line);
+  padding: 30px 18px 0;
+  display: flex;
+  flex-direction: column;
+}
+.brand {
+  font-size: 29px;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 12px;
+}
+.brand > span:first-child {
+  display: flex;
+  background: #426e53;
+  color: #f3f5e9;
+  border-radius: 9px;
+  width: 35px;
+  height: 35px;
+  align-items: center;
+  justify-content: center;
+}
+.brand-period {
+  color: #7c9a57;
+  margin-left: -9px;
+}
+.workspace {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 13px 9px;
+  margin: 34px 0 30px;
+}
+.workspace-icon {
+  background: var(--soft);
+  padding: 7px;
+  border-radius: 6px;
+  display: flex;
+}
+.workspace strong {
+  font-size: 11px;
+}
+.workspace small,
+.user small {
+  display: block;
+  margin-top: 4px;
+  font-size: 10px;
+}
+.nav-label {
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: var(--muted);
+  padding-left: 14px;
+  margin-bottom: 13px;
+}
+nav {
+  display: grid;
+  gap: 6px;
+}
+nav a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  padding: 12px 14px;
+  border-radius: 7px;
+  color: #778279;
+}
+nav a.active {
+  background: #edf2e9;
+  color: #375b40;
+  font-weight: 650;
+}
+nav a:hover {
+  background: var(--soft);
+}
+.nav-count {
+  margin-left: auto;
+  background: #e2e9dc;
+  border-radius: 4px;
+  font-size: 10px;
+  padding: 2px 6px;
+}
+.side-bottom {
+  margin-top: auto;
+}
+.simulation {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 15px 11px;
+  margin-bottom: 23px;
+  color: var(--green);
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+.simulation strong {
+  font-size: 11px;
+}
+.simulation small {
+  font-size: 9px;
+  width: 100%;
+  padding-left: 25px;
+}
+.user {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+}
+.user strong {
+  font-size: 11px;
+}
+.user > svg {
+  margin-left: auto;
+}
+.avatar {
+  background: #e9eddf;
+  color: #56654b;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+}
+.avatar.small {
+  width: 30px;
+  height: 30px;
+  font-size: 10px;
+}
+.avatar.large {
+  width: 72px;
+  height: 72px;
+  font-size: 23px;
+}
+.main {
+  margin-left: 238px;
+  flex: 1;
+  min-width: 0;
+}
+header {
+  height: 72px;
+  border-bottom: 1px solid var(--line);
+  background: var(--card);
+  padding: 0 34px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 11px;
+  color: var(--muted);
+}
+.breadcrumb span {
+  color: var(--text);
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+.demo-tag {
+  font-size: 8px;
+  letter-spacing: 1px;
+  color: #8a927c;
+  background: #f3f4ed;
+  border: 1px solid #e9ecdf;
+  border-radius: 4px;
+  padding: 5px 8px;
+}
+.icon-button {
+  display: inline-flex;
+  padding: 7px;
+  border: 0;
+  background: transparent;
+  position: relative;
+}
+.icon-button i {
+  position: absolute;
+  right: 7px;
+  top: 5px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #b08a53;
+}
+main {
+  padding: 32px 34px 36px;
+  max-width: 1600px;
+  margin: auto;
+}
+.page-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.eyebrow {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 1.8px;
+  font-weight: 650;
+  color: #7d8c75;
+  margin-bottom: 8px;
+}
+.page-heading p {
+  font-size: 11px;
+  margin-top: 6px;
+}
+.heading-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.date {
+  font-size: 11px;
+  color: var(--muted);
+}

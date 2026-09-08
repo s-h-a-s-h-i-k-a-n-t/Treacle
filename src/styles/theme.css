@@ -1,0 +1,24 @@
+[data-theme="dark"] {
+  --bg: #16251e;
+  --card: #203229;
+  --sidebar: #1b2c23;
+  --text: #e3e9dc;
+  --muted: #9aa99c;
+  --line: #34453a;
+  --green: #afc998;
+  --soft: #2d4334;
+  color: var(--text);
+  background: var(--bg);
+}
+[data-theme="dark"] nav a.active {
+  background: #324b39;
+  color: #d9e7c9;
+}
+[data-theme="dark"] .demo-tag {
+  background: #324333;
+  color: #bbc9ae;
+  border-color: #435542;
+}
+[data-theme="dark"] .metric-top {
+  color: #a5b19e;
+}
