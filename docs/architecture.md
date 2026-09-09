@@ -11,8 +11,8 @@ src/
   features/
     auth/pages/                # Login and profile/session pages
     overview/
-      pages/                   # Overview composition and zone selection
-      components/              # LiveMetricCards, ZoneHealth, ZoneTable
+      pages/                   # Overview composition and coin selection
+      components/              # LiveMetricCards, MarketHealth, MarketTable
     analytics/pages/           # Aggregated trends
     alerts/pages/              # Alert list, filters, acknowledgement
     settings/pages/            # Preferences
@@ -35,7 +35,7 @@ server/
   controllers/                 # HTTP input handling and response mapping
   middleware/                  # Session authorization
   services/                    # Sessions, simulation, aggregation and SSE lifecycle
-  utils/                       # Cookie parsing and numeric helpers
+  utils/                       # Cookie parsing and settings
  docs/
   architecture.md             # This guide
 ```
@@ -66,3 +66,9 @@ Sessions and telemetry remain in memory, as in the assessment implementation. Th
 - Add backend routes through a router/controller and put domain logic in a service.
 - Run `npm run typecheck` and `npm run build` for code changes.
 - Run `npm run format` before handing off changes; `npm run format:check` checks formatting without rewriting files.
+
+## Crypto data model
+
+`src/types/market.ts` defines coin identifiers, live frames, per-coin summaries, and spread alerts. The overview uses one selected coin for its cards and chart while the watchlist shows all three. Analytics selects from the polled per-coin summaries. Formatting and metric units are centralized in `src/config/metrics.ts`.
+
+The simulator generates price, trade quantity, trailing-minute volume, and spread. The summary service uses timestamp windows and never mixes prices across coins. Threshold alerts use spread percentages and retain the threshold that was exceeded.

@@ -11,6 +11,6 @@ export const usePreferencesStore = create(
     ) => void;
   }>(
     (set) => ({ dark: false, interval: 10, paused: false, set: (p) => set(p) }),
-    { name: "sentry-preferences" },
+    { name: "sentry-crypto-preferences" },
   ),
 );

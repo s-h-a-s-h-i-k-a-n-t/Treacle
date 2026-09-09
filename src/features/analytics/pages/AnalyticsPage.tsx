@@ -1,21 +1,43 @@
+import { useState } from "react";
+import type { CoinId } from "../../../types/market";
 import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 import { MetricChart } from "../../../components/charts/MetricChart";
 import { PageHeading } from "../../../components/ui/PageHeading";
-import { metricInfo } from "../../../config/metrics";
+import {
+  coins,
+  metricInfo,
+  metricUnit,
+  formatMetric,
+} from "../../../config/metrics";
 import { formatTime } from "../../../lib/format-time";
 import { useDashboardStore } from "../../../stores/dashboard.store";
 import { usePreferencesStore } from "../../../stores/preferences.store";
 
 export function AnalyticsPage() {
   const { summary, pollTime } = useDashboardStore();
+  const [coin, setCoin] = useState<CoinId>("BTC");
+  const market = summary?.markets.find((m) => m.id === coin);
   const interval = usePreferencesStore((s) => s.interval);
   return (
     <>
       <PageHeading
         eyebrow="PATTERNS & PERFORMANCE"
-        title="Warehouse analytics"
-        description="Derived insights from your sensor network, refreshed independently of the live feed."
+        title="Market analytics"
+        description="Per-coin insights from simulated markets, refreshed independently of the live feed."
       >
+        <label className="coin-select">
+          Coin{" "}
+          <select
+            value={coin}
+            onChange={(e) => setCoin(e.target.value as CoinId)}
+          >
+            {coins.map((c) => (
+              <option key={c.id} value={c.id}>
+                {c.name} ({c.id})
+              </option>
+            ))}
+          </select>
+        </label>
         <span className="subtle-badge">Polling every {interval}s</span>
       </PageHeading>
       <div className="section-note">
@@ -24,7 +46,7 @@ export function AnalyticsPage() {
       </div>
       <div className="metric-grid">
         {metricInfo.map((m) => {
-          const delta = summary?.deltas[m.key] ?? 0;
+          const delta = market?.deltas[m.key] ?? 0;
           return (
             <div className="metric-card" key={m.key}>
               <div className="metric-top">
@@ -32,8 +54,10 @@ export function AnalyticsPage() {
                 <m.icon size={19} />
               </div>
               <div className="metric-value">
-                {summary?.averages[m.key] ?? "—"}
-                <small>{m.unit}</small>
+                {market
+                  ? formatMetric(market.averages[m.key], m.key, coin)
+                  : "—"}
+                <small>{metricUnit(m.key, coin)}</small>
               </div>
               <div className="delta">
                 {delta >= 0 ? (
@@ -42,7 +66,9 @@ export function AnalyticsPage() {
                   <ArrowDownRight size={16} />
                 )}{" "}
                 {delta > 0 ? "+" : ""}
-                {delta} {m.unit} <span>vs previous window</span>
+                {formatMetric(delta, m.key, coin)}{" "}
+                {m.key === "spread" ? "pp" : metricUnit(m.key, coin)}{" "}
+                <span>vs previous window</span>
               </div>
             </div>
           );
@@ -54,22 +80,24 @@ export function AnalyticsPage() {
             <div>
               <h2>{m.label} trend</h2>
               <p>
-                Average across warehouse zones · backend history sampled every
-                10 seconds
+                {coin} only · backend history sampled approximately every 10
+                seconds
               </p>
             </div>
-            <span className="subtle-badge">{m.unit}</span>
+            <span className="subtle-badge">{metricUnit(m.key, coin)}</span>
           </div>
           <MetricChart
-            data={summary?.trends || []}
+            data={market?.trends || []}
             metric={m.key}
+            coin={coin}
             height={210}
           />
         </section>
       ))}
       <p className="section-note">
-        {summary?.samples ?? 0} sensor readings in the current aggregation
-        window.
+        {market?.samples ?? 0} market snapshots in the current aggregation
+        window. Volume averages use trailing-minute coin volume; spread deltas
+        are percentage points (pp).
       </p>
     </>
   );

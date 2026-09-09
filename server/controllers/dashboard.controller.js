@@ -1,16 +1,17 @@
-import { ZONES } from "../config/constants.js";
+import { COINS } from "../config/constants.js";
 export function createDashboardController(simulator, stream) {
   return {
     summary(req, res) {
-      const zone =
-        req.query.zone === undefined ? undefined : Number(req.query.zone);
+      const coin = req.query.coin;
       if (
-        zone !== undefined &&
-        (!Number.isInteger(zone) || zone < 0 || zone >= ZONES.length)
+        coin !== undefined &&
+        (typeof coin !== "string" || !COINS.some((c) => c.id === coin))
       ) {
-        return res.status(400).json({ message: "Invalid zone" });
+        return res
+          .status(400)
+          .json({ message: "Invalid coin; use BTC, ETH, or DOGE" });
       }
-      res.json(simulator.summary(zone));
+      res.json(simulator.summary(coin));
     },
     alerts(req, res) {
       res.json({ timestamp: Date.now(), alerts: simulator.alerts });

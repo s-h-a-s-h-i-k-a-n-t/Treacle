@@ -65,24 +65,66 @@
   color: #9b7c3c;
   background: #f6edd9;
 }
-.zone-select {
+.event-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  padding: 3px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+}
+.event-badge.update {
+  background: var(--soft);
+  color: var(--green);
+  border-color: #dbe5d8;
+}
+.event-badge.alert {
+  background: #faeae4;
+  color: #b36154;
+  border-color: #f1cfc6;
+}
+.event-badge.recovery {
+  background: #e9f0e4;
+  color: #3b7430;
+  border-color: #cde0c5;
+}
+[data-theme="dark"] .event-badge.update {
+  background: #25392d;
+  color: #9cc190;
+  border-color: #364f3d;
+}
+[data-theme="dark"] .event-badge.alert {
+  background: #3e2624;
+  color: #e08376;
+  border-color: #593734;
+}
+[data-theme="dark"] .event-badge.recovery {
+  background: #223f2b;
+  color: #79d68c;
+  border-color: #32593b;
+}
+.coin-select {
   font-size: 10px;
   color: var(--muted);
   display: flex;
   align-items: center;
   gap: 10px;
 }
-.zone-select select {
+.coin-select select {
   font-size: 10px;
   padding: 8px 10px;
 }
 .metric-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
   margin-bottom: 22px;
 }
 .metric-card {
+  min-width: 0;
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: 10px;
@@ -96,6 +138,8 @@
   font-size: 11px;
 }
 .metric-value {
+  flex-wrap: wrap;
+  overflow-wrap: anywhere;
   font-family: "Manrope", sans-serif;
   font-size: 34px;
   font-weight: 650;
@@ -296,7 +340,7 @@ td span {
   color: var(--muted);
   font-size: 10px;
 }
-.zone-button {
+.coin-button {
   border: 0;
   padding: 0;
   background: none;
@@ -304,17 +348,17 @@ td span {
   gap: 10px;
   text-align: left;
 }
-.zone-button strong {
+.coin-button strong {
   font-size: 11px;
   font-weight: 550;
 }
-.zone-button small {
+.coin-button small {
   display: block;
   font-size: 8px;
   letter-spacing: 0.7px;
   margin-top: 4px;
 }
-.zone-icon {
+.coin-icon {
   display: flex;
   padding: 9px;
   background: var(--bg);

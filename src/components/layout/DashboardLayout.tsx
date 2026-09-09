@@ -1,10 +1,4 @@
-import {
-  Bell,
-  ChevronRight,
-  Radio,
-  ShieldCheck,
-  Warehouse,
-} from "lucide-react";
+import { Bell, ChevronRight, Radio, ShieldCheck, Coins } from "lucide-react";
 import { Navigate, NavLink, Outlet } from "react-router-dom";
 import { navigationItems } from "../../config/navigation";
 import { useDashboardStore } from "../../stores/dashboard.store";
@@ -20,11 +14,11 @@ export function DashboardLayout() {
         <Brand />
         <div className="workspace">
           <span className="workspace-icon">
-            <Warehouse size={20} />
+            <Coins size={20} />
           </span>
           <div>
-            <strong>Northside warehouse</strong>
-            <small>Chicago, IL · WH-001</small>
+            <strong>Crypto markets</strong>
+            <small>BTC · ETH · DOGE</small>
           </div>
         </div>
         <span className="nav-label">WORKSPACE</span>
@@ -43,13 +37,13 @@ export function DashboardLayout() {
           <div className="simulation">
             <Radio size={18} />
             <strong>Simulation running</strong>
-            <small>Sensor readings update every 2s</small>
+            <small>Market updates every 2s</small>
           </div>
           <NavLink to="/profile" className="user">
             <span className="avatar">AM</span>
             <div>
               <strong>Alex Morgan</strong>
-              <small>Warehouse operator</small>
+              <small>Market analyst</small>
             </div>
             <ChevronRight size={16} />
           </NavLink>
@@ -59,7 +53,7 @@ export function DashboardLayout() {
         <header>
           <div className="breadcrumb">
             Workspace <ChevronRight size={13} />
-            <span>Northside warehouse</span>
+            <span>Crypto markets</span>
           </div>
           <div className="header-right">
             <span className="demo-tag">DEMO ENVIRONMENT</span>
@@ -90,10 +84,10 @@ export function DashboardLayout() {
         </main>
         <footer>
           <span>
-            <ShieldCheck size={13} /> Sentry warehouse intelligence
+            <ShieldCheck size={13} /> Sentry crypto intelligence
           </span>
           <span>
-            WH-001 <i /> Simulated sensor network
+            SIM-001 <i /> Simulated market data
           </span>
         </footer>
       </div>

@@ -6,7 +6,7 @@ import { Status } from "../../../components/ui/Status";
 import { formatTime } from "../../../lib/format-time";
 import { dashboardApi } from "../../../services/dashboard.api";
 import { useDashboardStore } from "../../../stores/dashboard.store";
-import type { Alert } from "../../../types/warehouse";
+import type { Alert } from "../../../types/market";
 
 export function AlertsPage() {
   const { alerts, pollTime, set } = useDashboardStore();
@@ -18,14 +18,16 @@ export function AlertsPage() {
   const filtered = alerts.filter(
     (a) =>
       (severity === "all" || a.severity === severity) &&
-      (a.zone + " " + a.title).toLowerCase().includes(search.toLowerCase()),
+      (a.coin + " " + a.coinId + " " + a.title)
+        .toLowerCase()
+        .includes(search.toLowerCase()),
   );
   return (
     <>
       <PageHeading
         eyebrow="STAY ONE STEP AHEAD"
         title="Alerts & events"
-        description="Threshold-based alerts derived from warehouse telemetry."
+        description="Threshold-based alerts derived from simulated bid–ask spreads."
       >
         <span className="subtle-badge">
           Last updated {formatTime(pollTime)}
@@ -53,7 +55,7 @@ export function AlertsPage() {
             <Search size={17} />
             <input
               aria-label="Search alerts"
-              placeholder="Search alerts or zones…"
+              placeholder="Search alerts or coins…"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
@@ -83,8 +85,8 @@ export function AlertsPage() {
             <div>
               <strong>{a.title}</strong>
               <p>
-                {a.zone} <span>·</span> {a.value} °C measured / {a.threshold} °C
-                threshold
+                {a.coin} ({a.coinId}) <span>·</span> {a.value}% spread /{" "}
+                {a.threshold}% threshold
               </p>
             </div>
             <div className="alert-meta">
@@ -110,9 +112,9 @@ export function AlertsPage() {
           <Status value={detail.severity} />
           <h3>{detail.title}</h3>
           <p>
-            {detail.zone} reported {detail.value} °C at{" "}
-            {formatTime(detail.timestamp)}, above its {detail.threshold} °C
-            warning threshold.
+            {detail.coin} ({detail.coinId}) reported a {detail.value}% spread at{" "}
+            {formatTime(detail.timestamp)}, above its {detail.threshold}% alert
+            threshold.
           </p>
           <p>
             Acknowledging records that this alert has been reviewed. New

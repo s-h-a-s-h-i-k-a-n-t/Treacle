@@ -28,14 +28,14 @@ export function ProfilePage() {
           <span className="avatar large">AM</span>
           <h2>{session.user.name}</h2>
           <p>{session.user.role}</p>
-          <span className="subtle-badge">Northside warehouse</span>
+          <span className="subtle-badge">Crypto markets</span>
           <div className="detail-row">
             <span>Email</span>
             <strong>{session.user.email}</strong>
           </div>
           <div className="detail-row">
             <span>Access</span>
-            <strong>Warehouse monitoring</strong>
+            <strong>Crypto market monitoring</strong>
           </div>
         </section>
         <section className="panel session-card">

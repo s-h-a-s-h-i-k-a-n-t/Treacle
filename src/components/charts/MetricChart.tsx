@@ -7,22 +7,24 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { metricInfo } from "../../config/metrics";
+import { metricInfo, metricUnit, formatMetric } from "../../config/metrics";
 import { formatTime } from "../../lib/format-time";
-import type { TrendPoint } from "../../types/warehouse";
+import type { TrendPoint, CoinId, MetricKey } from "../../types/market";
 
 export function MetricChart({
   data,
-  metric = "temperature",
+  metric = "price",
+  coin,
   height = 240,
 }: {
   data: TrendPoint[];
-  metric?: string;
+  metric?: MetricKey;
+  coin: CoinId;
   height?: number;
 }) {
   const info = metricInfo.find((m) => m.key === metric)!;
   if (!data.length)
-    return <div className="empty">Waiting for sensor readings…</div>;
+    return <div className="empty">Waiting for market updates…</div>;
   return (
     <ResponsiveContainer width="100%" height={height}>
       <AreaChart
@@ -58,6 +60,17 @@ export function MetricChart({
           tickLine={false}
           tick={{ fontSize: 11, fill: "var(--muted)" }}
           domain={["auto", "auto"]}
+          tickFormatter={(v) =>
+            Number(v).toLocaleString("en-US", {
+              notation: "compact",
+              maximumFractionDigits:
+                coin === "DOGE" && metric === "price"
+                  ? 6
+                  : metric === "spread"
+                    ? 3
+                    : 2,
+            })
+          }
         />
         <Tooltip
           contentStyle={{
@@ -66,7 +79,10 @@ export function MetricChart({
             borderRadius: 10,
           }}
           labelFormatter={(v) => formatTime(Number(v))}
-          formatter={(v) => [`${v} ${info.unit}`, info.label]}
+          formatter={(v) => [
+            `${formatMetric(Number(v), metric, coin)} ${metricUnit(metric, coin)}`,
+            info.label,
+          ]}
         />
         <Area
           type="monotone"

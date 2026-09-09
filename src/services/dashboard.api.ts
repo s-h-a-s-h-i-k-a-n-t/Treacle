@@ -1,5 +1,5 @@
 import { apiRequest } from "../lib/api-client";
-import type { Alert, Summary } from "../types/warehouse";
+import type { Alert, Summary } from "../types/market";
 export const dashboardApi = {
   summary(signal?: AbortSignal) {
     return apiRequest<Summary>("/dashboard/summary", { signal });

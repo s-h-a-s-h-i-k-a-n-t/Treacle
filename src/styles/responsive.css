@@ -180,10 +180,10 @@
     font-size: 8px;
   }
   .metric-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
   .metric-value svg {
-    display: block;
+    display: none;
     width: 100px;
   }
   .metric-value {

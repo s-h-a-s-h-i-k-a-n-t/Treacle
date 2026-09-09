@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import type { Session } from "../types/session";
-import type { Alert, Frame, Summary } from "../types/warehouse";
+import type { Alert, Frame, Summary } from "../types/market";
 
 type DashboardState = {
   session: Session | null;

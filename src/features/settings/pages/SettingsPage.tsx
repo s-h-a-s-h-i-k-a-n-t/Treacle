@@ -47,8 +47,8 @@ export function SettingsPage() {
         </div>
         <div className="setting">
           <div>
-            <strong>Live sensor updates</strong>
-            <p>Pause incoming UI readings. Backend generation continues.</p>
+            <strong>Live market updates</strong>
+            <p>Pause incoming market updates. Backend generation continues.</p>
           </div>
           <button onClick={() => p.set({ paused: !p.paused })}>
             {p.paused ? <Play size={16} /> : <Pause size={16} />}{" "}
@@ -62,8 +62,8 @@ export function SettingsPage() {
           <strong>Two independent data paths</strong>
           <p>
             Live telemetry streams every 2 seconds. Analytics and alerts use
-            periodic API requests, so they keep refreshing even when live
-            readings are paused.
+            periodic API requests, so they keep refreshing even when live market
+            updates are paused.
           </p>
         </div>
       </div>
