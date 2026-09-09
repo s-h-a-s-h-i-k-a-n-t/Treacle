@@ -7,6 +7,7 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile("index.html", { root: "dist" }),
   );
 }
-app.listen(process.env.PORT || 3001, "127.0.0.1", () =>
-  console.log("Sentry backend running on http://127.0.0.1:3001"),
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, "0.0.0.0", () =>
+  console.log(`Sentry backend running on port ${PORT}`),
 );

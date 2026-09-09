@@ -28,17 +28,17 @@ export function createApp({
     next();
   });
   app.use(
-    "/api/auth",
+    ["/api/auth", "/auth"],
     createAuthRouter(createAuthController(sessions, sessionMs), authorize),
   );
   app.use(
-    "/api/dashboard",
+    ["/api/dashboard", "/dashboard"],
     createDashboardRouter(
       createDashboardController(simulator, stream),
       authorize,
     ),
   );
-  app.use("/api", (req, res) =>
+  app.use(["/api", "/"], (req, res) =>
     res.status(404).json({ message: "Endpoint not found" }),
   );
   return { app, close: stream.close, simulator };
