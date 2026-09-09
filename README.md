@@ -1,16 +1,21 @@
 # Sentry · Crypto market simulator
 
-A six-page full-stack dashboard for simulated Bitcoin (BTC), Ethereum (ETH), and Dogecoin (DOGE) markets. All prices and trades are generated locally; no exchange or trading account is connected.
+> 🚀 **Live Production Demo:** [**https://sentrytreacle.netlify.app/**](https://sentrytreacle.netlify.app/)  
+> **Demo Credentials:** `demo@sentry.app` · `Crypto123!`
 
 ## System architecture
 
-![System architecture: a React and TypeScript browser client uses lifecycle hooks and Zustand state to work with the Express API, session service, SSE stream, market simulator, and summary service.](docs/images/treacle-system-architecture.png)
+![System architecture: a React and TypeScript browser client uses lifecycle hooks and Zustand state to work with the Express API, session service, SSE stream, market simulator, and summary service.](docs/images/treacle-system-architecture.svg)
 
 The diagram highlights cookie-based session authentication, live telemetry delivered over Server-Sent Events (SSE), and independent REST polling for the dashboard summaries and alerts.
 
 ## Responsive wireframes
 
-[View the desktop and mobile wireframes in Figma](https://www.figma.com/design/wHIwIh0L1HZT2w1vCOsbun/Treacle-%E2%80%94-Desktop-and-Mobile-Wireframes?node-id=0-1&t=M4AgqDMLBdSWxHyL-1).
+[![Figma - View Wireframes](https://img.shields.io/badge/Figma-Interactive%20Wireframes-F24E1E?style=for-the-badge&logo=figma&logoColor=white)](https://www.figma.com/design/wHIwIh0L1HZT2w1vCOsbun/Treacle-%E2%80%94-Desktop-and-Mobile-Wireframes?node-id=0-1&t=M4AgqDMLBdSWxHyL-1)
+
+### 🎨 [👉 Click Here to View Full Interactive Wireframes in Figma ↗](https://www.figma.com/design/wHIwIh0L1HZT2w1vCOsbun/Treacle-%E2%80%94-Desktop-and-Mobile-Wireframes?node-id=0-1&t=M4AgqDMLBdSWxHyL-1)
+
+![Treacle Desktop and Mobile Wireframes Overview](docs/images/treacle-wireframes.png)
 
 ## Run locally
 
