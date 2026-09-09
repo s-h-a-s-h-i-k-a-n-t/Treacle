@@ -11,6 +11,10 @@ export function PageHeading({
   description: string;
   children?: React.ReactNode;
 }) {
+  React.useEffect(() => {
+    document.title = `${title} · Sentry Crypto Simulator`;
+  }, [title]);
+
   return (
     <div className="page-heading">
       <div>

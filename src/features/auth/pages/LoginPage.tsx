@@ -1,5 +1,5 @@
 import { ChevronRight, ShieldCheck, Coins } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import { Brand } from "../../../components/ui/Brand";
 import { authApi } from "../../../services/auth.api";
@@ -11,6 +11,11 @@ export function LoginPage() {
     [password, setPassword] = useState("Crypto123!"),
     [error, setError] = useState(""),
     [busy, setBusy] = useState(false);
+
+  useEffect(() => {
+    document.title = "Sign In · Sentry Crypto Simulator";
+  }, []);
+
   if (session) return <Navigate to="/" replace />;
   return (
     <div className="login">
