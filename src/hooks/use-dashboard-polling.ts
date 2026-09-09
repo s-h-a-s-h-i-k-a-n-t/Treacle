@@ -16,13 +16,23 @@ export function useDashboardPolling() {
           dashboardApi.summary(controller.signal),
           dashboardApi.alerts(controller.signal),
         ]);
-        if (active && useDashboardStore.getState().session === session)
-          set({
+        if (active && useDashboardStore.getState().session === session) {
+          const currentFrame = useDashboardStore.getState().frame;
+          const patch: Parameters<typeof set>[0] = {
             summary,
             alerts: alerts.alerts,
             pollTime: alerts.timestamp,
             error: "",
-          });
+          };
+          if (!currentFrame && summary.coins) {
+            patch.frame = {
+              sequence: 1,
+              timestamp: summary.dataTimestamp,
+              readings: summary.coins,
+            };
+          }
+          set(patch);
+        }
       } catch (e) {
         if (active && useDashboardStore.getState().session)
           set({ error: (e as Error).message });

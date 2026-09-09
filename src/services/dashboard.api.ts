@@ -1,6 +1,9 @@
 import { apiRequest } from "../lib/api-client";
-import type { Alert, Summary } from "../types/market";
+import type { Alert, Frame, Summary } from "../types/market";
 export const dashboardApi = {
+  frame(signal?: AbortSignal) {
+    return apiRequest<Frame>("/dashboard/frame", { signal });
+  },
   summary(signal?: AbortSignal) {
     return apiRequest<Summary>("/dashboard/summary", { signal });
   },

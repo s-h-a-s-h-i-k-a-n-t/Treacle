@@ -1,6 +1,9 @@
 import { COINS } from "../config/constants.js";
 export function createDashboardController(simulator, stream) {
   return {
+    frame(req, res) {
+      res.json(simulator.tick());
+    },
     summary(req, res) {
       const coin = req.query.coin;
       if (
